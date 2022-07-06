@@ -1,1 +1,1 @@
-# Pokemon-Tamagotchi-Mini-Project
+# Tamagotchi-Mini-Project
