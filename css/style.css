@@ -7,3 +7,8 @@ html,body {
     background-position: center;
 
 }
+
+#buttons {
+display:flex;
+justify-content: space-around;
+}
