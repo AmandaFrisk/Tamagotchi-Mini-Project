@@ -1,26 +1,36 @@
-alert("Welcome to Pokemon Daycare. We're so happy to have you volunteering with us today! Click OK to continue ")
+//Intro
+alert("Welcome to Pokemon Daycare. We're so happy to have you volunteering with us today! Click OK to continue.")
 const playerName = prompt("What's your name?"); 
 const Professor = "Professor Amanda"
 //console.log(playerName);
-alert(`It is great to meet you ${playerName}! I am ${Professor}. Before you're entrusted with a starter Pokemon of your own, you must show that you can care for someone else's. Oh perfect timing! Trainer Red just dropped off his Charmander! You will be assigned to care for this Charmander while he's away.Charmander is playful and rambunctious. If they do not get enough attention they will FAINT from boredom. Remember that Charmander must eat and sleep as well or they will FAINT.`)
+alert(`It is great to meet you ${playerName}! I am ${Professor}. Before you're entrusted with a starter Pokemon of your own, you must show that you can care for someone else's. Perfect timing! Trainer Red just dropped off his Charmander! You will be assigned to care for this Charmander while he's away.Charmander is playful and rambunctious. If they do not get enough attention they will FAINT from boredom. Remember that Charmander must eat and sleep as well or they will FAINT.`)
 
 const pokemonName = prompt(" Oh dear, Red didn't leave the name of this Charmander. What would you like to call it as a nick-name?")
 
 alert(`Please take good care of ${pokemonName } , you might even get to witness their evolution! `)
 
-
-// SetTimeOut() execute evolution alert and change image of Pokemon - include some verbiage about doing such a good job caring for the Pokemon that player might be closer to being ready for their own starter Pokemon
+//TIME INTERVALS
+//setTimeInterval()- 3-5 sec intervals- ( doesn't go below 0)----hunger, sleepiness and boredom
+//setTimeOut() -pass a function - Increase Pet Age x minutes ----- results in evolution aka image morphs to new image
+///////////////////
+//DOM SELECTIONS
+//let hungerScore= document.querySelector('.hungerScore').////innerHTML(${hunger})
+//Class
 class Pokemon {
-    constructor( name, hunger=1, sleepiness=1, boredom=1, Age=1){ //parameter names
-        this.name = name
-        this.hunger = hunger    
+    constructor( name, hunger, sleepiness, boredom, Age){ 
+        this.name = name                
+        this.hunger = hunger  
         this.sleepiness = sleepiness  
         this.boredom = boredom
      }
          feedPokemon(){
             console.log("fed pokemon")
-            //when feed button is clicked the hunger 
-        }
+             this.hunger++ 
+            hungerScore = this.hunger
+            console.log(hungerScore)
+             }
+                                                                                                                                                                                                                
+        
         sleepyPokemon(){
             console.log("pokemon slept")
         }
@@ -28,10 +38,10 @@ class Pokemon {
             console.log("played with pokemon")
         }
 }
-let selectedPokemon = new Pokemon(`${pokemonName}`)
+let selectedPokemon = new Pokemon(`${pokemonName}`, 3, 4, 5, 0)
 console.log(selectedPokemon);
 
-
+let hungerScore= document.querySelector('.hungerScore').innerHTML = 3
 //add event listeners for #buttons div
 document.getElementById('feed').addEventListener('click', selectedPokemon.feedPokemon) // when #feed btn clicks feedPokemon () - hunger goes down
 document.getElementById('lights').addEventListener('click', selectedPokemon.sleepyPokemon) // when #lights btn clicks sleepyPokemon()-sleepiness goes down
@@ -40,6 +50,8 @@ document.getElementById('play').addEventListener('click', selectedPokemon.Played
 
 
 //Brain Dump
+// Start in an egg?
+// Need to tell player that if levels get to 10 they faint
 // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing. & Your pet should die if Hunger, Boredom, or Sleepiness hits 10.
 
 //How to get hunger, boredom, sleepiness to go on it's own and then keep track in points. 

@@ -12,3 +12,8 @@ html,body {
 display:flex;
 justify-content: space-around;
 }
+
+#Stats{
+    background: white;
+    /*Need to style*/
+}
