@@ -14,7 +14,10 @@ alert(`Please take good care of ${pokemonName } , you might even get to witness 
 //setTimeOut() -pass a function - Increase Pet Age x minutes ----- results in evolution aka image morphs to new image
 ///////////////////
 //DOM SELECTIONS
-//let hungerScore= document.querySelector('.hungerScore').////innerHTML(${hunger})
+
+let hungerScore= document.querySelector('.hungerScore')
+let sleepinessScore = document.querySelector('.sleepinessScore')
+let boredomScore = document.querySelector('.boredomScore')
 //Class
 class Pokemon {
     constructor( name, hunger, sleepiness, boredom, Age){ 
@@ -26,33 +29,45 @@ class Pokemon {
          feedPokemon(){
             console.log("fed pokemon")
              this.hunger++ 
-            hungerScore = this.hunger
+            hungerScore.innerHTML = this.hunger
             console.log(hungerScore)
-             }
-                                                                                                                                                                                                                
+
+          }
+                                                                               
         
         sleepyPokemon(){
             console.log("pokemon slept")
+            this.sleepiness++
+            sleepinessScore.innerText = this.sleepiness
+            console.log(sleepinessScore)
+            //Something needs to happen visually when lights turn off - change background? Sleepy Character?
         }
         Played(){
             console.log("played with pokemon")
+            this.boredom++
+            console.log(this.boredom)
+            boredomScore.innerText= this.boredom
+            console.log("boredomScore", boredomScore)
         }
 }
+
+//new instance
 let selectedPokemon = new Pokemon(`${pokemonName}`, 3, 4, 5, 0)
 console.log(selectedPokemon);
 
-let hungerScore= document.querySelector('.hungerScore').innerHTML = 3
-//add event listeners for #buttons div
-document.getElementById('feed').addEventListener('click', selectedPokemon.feedPokemon) // when #feed btn clicks feedPokemon () - hunger goes down
-document.getElementById('lights').addEventListener('click', selectedPokemon.sleepyPokemon) // when #lights btn clicks sleepyPokemon()-sleepiness goes down
-document.getElementById('play').addEventListener('click', selectedPokemon.Played) //when #play btn clicks bordom goes down
+
+
+//EVENT LISTENERS
+document.getElementById('feed').addEventListener('click', (e)=>{selectedPokemon.feedPokemon()}) // when #feed btn clicks feedPokemon () - hunger goes down
+document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.sleepyPokemon()}) // when #lights btn clicks sleepyPokemon()-sleepiness goes down
+document.getElementById('play').addEventListener('click', (e)=>{selectedPokemon.Played()}) //when #play btn clicks bordom goes down
 
 
 
 //Brain Dump
 // Start in an egg?
 // Need to tell player that if levels get to 10 they faint
-// Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing. & Your pet should die if Hunger, Boredom, or Sleepiness hits 10.
+// Pet should die if Hunger, Boredom, or Sleepiness hits 10.
 
 //How to get hunger, boredom, sleepiness to go on it's own and then keep track in points. 
 
@@ -60,8 +75,7 @@ document.getElementById('play').addEventListener('click', selectedPokemon.Played
         // Then if they hit the button the points go down. 
             // If points are =1 message tells them they do not need to click btn atm. 
             //If points = 10 Pokemon faints - if Pokemon faints something needs to happen visually
-// Need to display points 
-    //Ideas:
+
 
 //Increase your pet's age every x minutes set 
     // If age = x - morph aka evolve - change image to evolution 
