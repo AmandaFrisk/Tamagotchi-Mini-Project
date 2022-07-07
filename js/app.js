@@ -7,10 +7,13 @@ alert(`It is great to meet you ${playerName}! I am ${Professor}. Before you're e
 
 const pokemonName = prompt(" Oh dear, Red didn't leave the name of this Charmander. What would you like to call it as a nick-name?")
 
-alert(`Please take good care of ${pokemonName } , you might even get to witness their evolution! `)
+alert(`Please take good care of ${pokemonName } , you might even get to witness their evolution! Press the START button to begin. `)
 
 //TIME INTERVALS
+//Need On click- add Start Btn
 //setTimeInterval()- 3-5 sec intervals- ( doesn't go below 0)----hunger, sleepiness and boredom
+
+
 //setTimeOut() -pass a function - Increase Pet Age x minutes ----- results in evolution aka image morphs to new image
 ///////////////////
 //DOM SELECTIONS
@@ -18,7 +21,7 @@ alert(`Please take good care of ${pokemonName } , you might even get to witness 
 let hungerScore= document.querySelector('.hungerScore')
 let sleepinessScore = document.querySelector('.sleepinessScore')
 let boredomScore = document.querySelector('.boredomScore')
-//Class
+
 class Pokemon {
     constructor( name, hunger, sleepiness, boredom, Age){ 
         this.name = name                
@@ -26,6 +29,36 @@ class Pokemon {
         this.sleepiness = sleepiness  
         this.boredom = boredom
      }
+
+        Start(){
+            console.log(this.hunger)
+            console.log(hungerScore)
+            console.log("start")
+            setInterval(function () {
+                console.log("inside interval")
+                console.log(hungerScore.innerText)
+               /* if(this.hunger >= 1 && this.sleepiness >= 1 && this.boredom >= 1 ){this.hunger--
+                hungerScore.innerHTML = this.hunger
+                console.log(hungerScore)
+                this.sleepiness--
+                sleepinessScore.innerText = this.sleepiness
+                console.log(sleepinessScore)
+                this.boredom--
+                console.log(boredomScore)
+                }
+                else if(hungerScore <= 0 || sleepinessScore  <= 0 || boredomScore <= 0 ){
+                    alert("Oh dear, the Pokemon has fainted")
+                }*/
+                if(this.hunger >= 1){
+                    console.log(this.hunger)
+                }
+                else{
+                    console.log(typeof this.hunger)
+                }
+                
+            }, 1000)
+           // setTimeout()
+        }
          feedPokemon(){
             console.log("fed pokemon")
              this.hunger++ 
@@ -40,16 +73,28 @@ class Pokemon {
             this.sleepiness++
             sleepinessScore.innerText = this.sleepiness
             console.log(sleepinessScore)
-            //Something needs to happen visually when lights turn off - change background? Sleepy Character?
+           
         }
+        
         Played(){
             console.log("played with pokemon")
             this.boredom++
             console.log(this.boredom)
             boredomScore.innerText= this.boredom
-            console.log("boredomScore", boredomScore)
+            console.log(boredomScore)
         }
-}
+
+        lightsOff(){
+            console.log("lightsOff")
+        document.body.style.backgroundImage="url('../images/Darkforest.jpeg')"
+
+      
+        // ZZZ image change too?
+        }
+
+
+    }
+
 
 //new instance
 let selectedPokemon = new Pokemon(`${pokemonName}`, 3, 4, 5, 0)
@@ -58,11 +103,12 @@ console.log(selectedPokemon);
 
 
 //EVENT LISTENERS
+document.getElementById('start').addEventListener('click',(e)=>{ selectedPokemon.Start()}) 
 document.getElementById('feed').addEventListener('click', (e)=>{selectedPokemon.feedPokemon()}) // when #feed btn clicks feedPokemon () - hunger goes down
 document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.sleepyPokemon()}) // when #lights btn clicks sleepyPokemon()-sleepiness goes down
 document.getElementById('play').addEventListener('click', (e)=>{selectedPokemon.Played()}) //when #play btn clicks bordom goes down
 
-
+document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.lightsOff()}) //when #lights btn clicked lightsOff()- darkened image change
 
 //Brain Dump
 // Start in an egg?
