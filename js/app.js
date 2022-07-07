@@ -30,35 +30,31 @@ class Pokemon {
         this.boredom = boredom
      }
 
-        Start(){
-            console.log(this.hunger)
+     Start(){
+        setInterval(() => {
+            
+           if(this.hunger >= 1 && this.sleepiness >= 1 && this.boredom >= 1 ){
+            this.hunger--
+            hungerScore.innerHTML = this.hunger
             console.log(hungerScore)
-            console.log("start")
-            setInterval(function () {
-                console.log("inside interval")
-                console.log(hungerScore.innerText)
-               /* if(this.hunger >= 1 && this.sleepiness >= 1 && this.boredom >= 1 ){this.hunger--
-                hungerScore.innerHTML = this.hunger
-                console.log(hungerScore)
-                this.sleepiness--
-                sleepinessScore.innerText = this.sleepiness
-                console.log(sleepinessScore)
-                this.boredom--
-                console.log(boredomScore)
-                }
-                else if(hungerScore <= 0 || sleepinessScore  <= 0 || boredomScore <= 0 ){
-                    alert("Oh dear, the Pokemon has fainted")
-                }*/
-                if(this.hunger >= 1){
-                    console.log(this.hunger)
-                }
-                else{
-                    console.log(typeof this.hunger)
-                }
-                
-            }, 1000)
+            this.sleepiness--
+            sleepinessScore.innerText = this.sleepiness
+            console.log(sleepinessScore)
+            this.boredom--
+            boredomScore.innerText = this.sleepiness
+            console.log(boredomScore)
+            }
+            else if(this.hunger <= 0 || this.sleepiness <= 0 || this.boredom <= 0 ){
+                console.log("Oh dear, the Pokemon has fainted")
+            } else {
+                console.log("conditionals not working")
+            }
+            
+        }, 1000)
+       // setTimeout()
+    }
            // setTimeout()
-        }
+        
          feedPokemon(){
             console.log("fed pokemon")
              this.hunger++ 
