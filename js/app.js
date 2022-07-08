@@ -21,16 +21,18 @@ alert(`Please take good care of ${pokemonName } , you might even get to witness 
 let hungerScore= document.querySelector('.hungerScore')
 let sleepinessScore = document.querySelector('.sleepinessScore')
 let boredomScore = document.querySelector('.boredomScore')
+let ageTracking = document.querySelector('#Age')
 
 class Pokemon {
-    constructor( name, hunger, sleepiness, boredom, Age){ 
+    constructor( name, hunger, sleepiness, boredom, age){ 
         this.name = name                
         this.hunger = hunger  
         this.sleepiness = sleepiness  
         this.boredom = boredom
+        this.age = age
      }
-
-     Start(){
+     ////??? Needs to stop fainting
+     /*Start(){
         setInterval(() => {
             
            if(this.hunger >= 1 && this.sleepiness >= 1 && this.boredom >= 1 ){
@@ -45,14 +47,14 @@ class Pokemon {
             console.log(boredomScore)
             }
             else if(this.hunger <= 0 || this.sleepiness <= 0 || this.boredom <= 0 ){
-                console.log("Oh dear, the Pokemon has fainted")
+                alert("Oh dear, the Pokemon has fainted!") //????? NEEDS  TO STOP setTimeOut? // Visual for fainting?
             } else {
                 console.log("conditionals not working")
             }
             
-        }, 1000)
-       // setTimeout()
-    }
+        }, 3000)
+       
+    }*/
            // setTimeout()
         
          feedPokemon(){
@@ -60,6 +62,8 @@ class Pokemon {
              this.hunger++ 
             hungerScore.innerHTML = this.hunger
             console.log(hungerScore)
+
+            //some kind of visual or sound needs to happen when fed
 
           }
                                                                                
@@ -78,19 +82,45 @@ class Pokemon {
             console.log(this.boredom)
             boredomScore.innerText= this.boredom
             console.log(boredomScore)
+            // some kind of visual or sound needs to happen when played
         }
 
         lightsOff(){
             console.log("lightsOff")
-        document.body.style.backgroundImage="url('../images/Darkforest.jpeg')"
-
-      
+        document.body.style.backgroundImage="url('../images/DarkForest.jpeg')"
         // ZZZ image change too?
-        }
-
-
+        function lightsOn(){
+            document.body.style.backgroundImage="url('../images/LightForest.jpeg')" 
+      }
+      setTimeout(lightsOn, 1000)
+        
     }
+    ///??????????
+        ageUp(){
+            console.log("aged")
 
+            let ageTimer = setInterval( ()=>{
+                console.log("inside age interval")
+                this.age++
+                ageTracking.innerHTML = this.age
+                if (this.age === 2){
+                    console.log("Charmander")
+            //change to Charmander Pic
+                }
+                if (this.age === 3){
+                    console.log("Charmeleon")
+                    //change to Charmeleon Pic
+                }
+                if (this.age ===4){
+                    console.log("Charzard")
+             //Age =3 change to Charzard Pic
+                }
+                else{
+                    clearsetInterval(ageTimer) /////NEED TO STOP FUNCTION
+                }
+               
+             } , 3000) } 
+}
 
 //new instance
 let selectedPokemon = new Pokemon(`${pokemonName}`, 3, 4, 5, 0)
@@ -99,6 +129,7 @@ console.log(selectedPokemon);
 
 
 //EVENT LISTENERS
+document.getElementById('start').addEventListener('click',(e)=>{ selectedPokemon.ageUp()}) 
 document.getElementById('start').addEventListener('click',(e)=>{ selectedPokemon.Start()}) 
 document.getElementById('feed').addEventListener('click', (e)=>{selectedPokemon.feedPokemon()}) // when #feed btn clicks feedPokemon () - hunger goes down
 document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.sleepyPokemon()}) // when #lights btn clicks sleepyPokemon()-sleepiness goes down
@@ -111,12 +142,7 @@ document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemo
 // Need to tell player that if levels get to 10 they faint
 // Pet should die if Hunger, Boredom, or Sleepiness hits 10.
 
-//How to get hunger, boredom, sleepiness to go on it's own and then keep track in points. 
 
-    // Ideas: When pokemonName alert- have some kind of timer, after x time points increase.
-        // Then if they hit the button the points go down. 
-            // If points are =1 message tells them they do not need to click btn atm. 
-            //If points = 10 Pokemon faints - if Pokemon faints something needs to happen visually
 
 
 //Increase your pet's age every x minutes set 
