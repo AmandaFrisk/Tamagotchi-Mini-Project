@@ -7,14 +7,11 @@
     <title>Document</title>
     <link rel = "stylesheet" href = "css/style.css"/>
 </head>
-<body class="dark-mode">
+<body class="body">
 
- <div id = "buttons">  
-<button id="start">START</button>   
-<button id="feed">FEED THE POKEMON</button>
-<button id="lights">TURN OFF THE LIGHTS</button>
-<button id="play">PLAY WITH THE POKEMON</button>
-</div> 
+    <div id="start-button">
+ <button id="start">START</button>   
+</div>
 
 <div id ="Stats" class="Stats-Box">
 
@@ -24,18 +21,27 @@
       
     <span id = "Sleepiness" class="Stats-Text">Sleepiness Level : 
         <span class="sleepinessScore"></span>
-
+        </span>
     <span id = "Boredom" class="Stats-Text">Boredom Level :
         <span class="boredomScore"></span>
-
-   <!--<span id = "Age" class="Stats-Text">Age : 0 </span>-->
+    </span>  
 </div>
+
 <div id = "Pokemon-Image">
 <img id ="picSwap" src="../images/Egg.png" alt="Pokemon Green Egg">
 </div>
-<footer id="credits">
+
+<div id ="Food-Image"></div>
+
+
+<div id = "buttons">   
+    <button id="feed">FEED THE POKEMON</button>
+    <button id="lights">TURN OFF THE LIGHTS</button>
+    <button id="play">PLAY WITH THE POKEMON</button>
+    </div> 
+<!--<footer id="credits">
     Credits
-</footer>
+</footer>-->
     <script type= "text/javascript" src ="js/app.js"></script>
 </body>
 </html>

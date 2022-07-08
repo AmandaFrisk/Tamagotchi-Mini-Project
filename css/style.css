@@ -10,27 +10,97 @@ html,body {
 }
 
 #buttons {
+background-color: aqua;
 display:flex;
+border-radius: 50%;
 justify-content: center;
 align-items: center;
+}
+#feed{
+background-color: white;
+border-radius: 30%;
+width: 90px;
+ height: 60px;
 
 }
-
+#lights{
+    background-color:white;
+    border-radius: 30%;
+    width: 90px;
+     height: 60px;
+    
+    }
+    
+#play{
+        background-color:white;
+        border-radius: 30%;
+        width: 90px;
+         height: 60px;
+        
+        }
 #Stats{
-    background: white;
-    /*Need to style*/
-}
-
-
-/*#Credits{
+    background-color: white;
+    width: 270px;
+    height: 75px;
+    margin: auto;
+    border: 1px solid white;
+    display: block;
+    box-shadow: 0 1px 0 1px black,
+    inset 0 1px 0 1px black,
+    0 0 0 1px black,
+    inset 0 0 0 1px black;
     
 }
-*/
+
+#Hunger{
+    font-size: 20px;
+    font-family: "Pokemon GB", Arial, sans-serif;
+    margin: 20% 25% 20% 0%
+    
+    
+}
+#Sleepiness{
+    font-size: 20px;
+    font-family: "Pokemon GB", Arial, sans-serif;
+    margin: 20% 25% 20% 0%
+    
+}
+#Boredom{
+    font-size: 20px;
+    font-family: "Pokemon GB", Arial, sans-serif;
+    margin: 10% 25% 20% 0%
+    
+}
+
 #Pokemon-Image{
    position:absolute;
-   
-    left: 39%;
+   bottom: 0%;
+    left: 39%; 
+    width: 400px; 
     
+}
+#picSwap{
+    width: 200px;
+    height: 200px;
     
 }
 
+#Food-Image{
+    height: 100px;
+    width: 100px;
+}
+
+#berryImage{
+    height: 75px;
+    width: 75px;
+    position:absolute;
+    bottom:0%;
+    left: 30%;
+}
+
+#start{
+    background-color:red;
+    height: 50px;
+    width: 70px;
+    border-radius: 10px;
+}
