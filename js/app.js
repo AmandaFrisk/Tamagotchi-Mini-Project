@@ -32,8 +32,8 @@ class Pokemon {
         this.age = age
      }
      ////??? Needs to stop fainting
-     /*Start(){
-        setInterval(() => {
+     Start(){
+     let startVar = setInterval(() => {
             
            if(this.hunger >= 1 && this.sleepiness >= 1 && this.boredom >= 1 ){
             this.hunger--
@@ -47,14 +47,18 @@ class Pokemon {
             console.log(boredomScore)
             }
             else if(this.hunger <= 0 || this.sleepiness <= 0 || this.boredom <= 0 ){
-                alert("Oh dear, the Pokemon has fainted!") //????? NEEDS  TO STOP setTimeOut? // Visual for fainting?
+                alert("Oh dear, the Pokemon has fainted!")
+                clearInterval(startVar)
+                document.body.style.backgroundImage="url('https://images.unsplash.com/photo-1588421357574-87938a86fa28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
+                document.querySelector('#picSwap').src='../images/Game-Over.gif'
+                document.querySelector('#buttons').remove()//????? NEEDS  TO STOP setTimeOut? // Visual for fainting?
             } else {
                 console.log("conditionals not working")
             }
             
         }, 3000)
        
-    }*/
+    }
            // setTimeout()
         
          feedPokemon(){
@@ -95,41 +99,43 @@ class Pokemon {
       setTimeout(lightsOn, 1000)
         
     }
-    ///??????????
-        ageUp(){
+    
+       ageUp(){
             console.log("aged")
 
             let ageTimer = setInterval( ()=>{
                 console.log("inside age interval")
                 this.age++
-                ageTracking.innerHTML = this.age
-                if (this.age === 2){
-                    console.log("Charmander")
-            //change to Charmander Pic
-                }
+                //ageTracking.innerHTML = this.age
                 if (this.age === 3){
+                    console.log("Charmander")
+            document.querySelector('#picSwap').src="../images/Char1.png"
+                }
+                if (this.age === 5){
                     console.log("Charmeleon")
-                    //change to Charmeleon Pic
+            document.querySelector('#picSwap').src='../images/Charmeleon1.png'
                 }
-                if (this.age ===4){
+                if (this.age === 7){
                     console.log("Charzard")
+                   document.querySelector('#picSwap').src='../images/Charzard1.png'
              //Age =3 change to Charzard Pic
+             clearInterval(ageTimer) 
                 }
-                else{
-                    clearsetInterval(ageTimer) /////NEED TO STOP FUNCTION
-                }
+             if(this.hunger <= 0 || this.sleepiness <= 0 || this.boredom <= 0 ){
+             clearInterval(ageTimer) 
+             }
                
              } , 3000) } 
 }
 
 //new instance
-let selectedPokemon = new Pokemon(`${pokemonName}`, 3, 4, 5, 0)
+let selectedPokemon = new Pokemon(`${pokemonName}`, 5, 12, 8, 0)
 console.log(selectedPokemon);
 
 
 
 //EVENT LISTENERS
-document.getElementById('start').addEventListener('click',(e)=>{ selectedPokemon.ageUp()}) 
+document.getElementById('start').addEventListener('click',(e)=>{ selectedPokemon.ageUp(),selectedPokemon.Start()}) 
 document.getElementById('start').addEventListener('click',(e)=>{ selectedPokemon.Start()}) 
 document.getElementById('feed').addEventListener('click', (e)=>{selectedPokemon.feedPokemon()}) // when #feed btn clicks feedPokemon () - hunger goes down
 document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.sleepyPokemon()}) // when #lights btn clicks sleepyPokemon()-sleepiness goes down
