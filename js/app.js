@@ -71,7 +71,7 @@ class Pokemon {
             berryDiv.appendChild(berryImageTag)
             berryImageTag.src= './images/Purple-Berry.png'
             
-            //setTimeout((()=> {berryImageTag.remove()}), 1500) 
+            setTimeout((()=> {berryImageTag.remove()}), 1500) 
           }
                                                                              
         
