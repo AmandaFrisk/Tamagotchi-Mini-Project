@@ -69,9 +69,9 @@ class Pokemon {
             let berryImageTag =document.createElement('img')
             berryImageTag.setAttribute('id',"berryImage") 
             berryDiv.appendChild(berryImageTag)
-            berryImageTag.src= '../images/Purple-Berry.png'
+            berryImageTag.src= './images/Purple-Berry.png'
             
-            setTimeout((()=> {berryImageTag.remove()}), 1500) 
+            //setTimeout((()=> {berryImageTag.remove()}), 1500) 
           }
                                                                              
         
@@ -96,7 +96,7 @@ class Pokemon {
             let ballImageTag =document.createElement('img')
             ballImageTag.setAttribute('id',"ballImage") 
             ballDiv.appendChild(ballImageTag)
-            ballImageTag.src= '../images/pokeball-image.png'
+            ballImageTag.src= './images/pokeball-image.png'
             
             setTimeout((()=> {ballImageTag.remove()}), 1500) 
           }
