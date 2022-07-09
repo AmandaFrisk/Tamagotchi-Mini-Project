@@ -1,4 +1,4 @@
-//Intro
+//INTRO
 alert("Welcome to Pokemon Daycare. We're so happy to have you volunteering with us today! Click OK to continue.")
 const playerName = prompt("What's your name?"); 
 const Professor = "Professor Amanda"
@@ -8,8 +8,7 @@ alert(`It is great to meet you ${playerName}! I am ${Professor}. Before you're e
 const pokemonName = prompt(" Oh dear, Red didn't leave a name for this Pokemon. What would you like to call it as a nick-name?")
 
 alert(`Please take good care of ${pokemonName } , you might even get to witness their evolution! Press OK and then press the red START button to begin. `)
-
-
+//DOM 
 let hungerScore= document.querySelector('.hungerScore')
 let sleepinessScore = document.querySelector('.sleepinessScore')
 let boredomScore = document.querySelector('.boredomScore')
@@ -17,7 +16,7 @@ let ageTracking = document.querySelector('#Age')
 let grabButtons = document.querySelector('#buttons')
 let grabFoodImage = document.querySelector('#Food-Image')
 let grabBackgroundImage = document.body.style.backgroundImage
-
+//CLASS STARTS
 class Pokemon {
     constructor( name, hunger, sleepiness, boredom, age){ 
         this.name = name                
@@ -52,7 +51,7 @@ class Pokemon {
                 console.log("conditionals not working")
             }
             
-        }, 3000)
+        }, 2100)
        
     }
            
@@ -72,7 +71,7 @@ class Pokemon {
             berryDiv.appendChild(berryImageTag)
             berryImageTag.src= '../images/Purple-Berry.png'
             
-            setTimeout((()=> {berryImageTag.remove()}), 1000) 
+            setTimeout((()=> {berryImageTag.remove()}), 1500) 
           }
                                                                              
         
@@ -99,7 +98,7 @@ class Pokemon {
             ballDiv.appendChild(ballImageTag)
             ballImageTag.src= '../images/pokeball-image.png'
             
-            setTimeout((()=> {ballImageTag.remove()}), 1000) 
+            setTimeout((()=> {ballImageTag.remove()}), 1500) 
           }
         
 
@@ -144,7 +143,7 @@ class Pokemon {
     }
 
 //new instance
-let selectedPokemon = new Pokemon(`${pokemonName}`, 10, 12, 13, 0)
+let selectedPokemon = new Pokemon(`${pokemonName}`, 5, 7, 9, 0)
 console.log(selectedPokemon);
 
 
@@ -156,7 +155,7 @@ document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemo
 document.getElementById('play').addEventListener('click', (e)=>{selectedPokemon.Played()}) 
 document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.lightsOff()}) 
 
-//NEED: Animate your pet across the screen while it's alive.
 
+//Rename 
 
 
