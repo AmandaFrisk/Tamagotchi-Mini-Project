@@ -43,7 +43,7 @@ class Pokemon {
             else if(this.hunger <= 0 || this.sleepiness <= 0 || this.boredom <= 0 ){
                 clearInterval(startVar)
                document.body.style.backgroundImage="url('https://images.unsplash.com/photo-1588421357574-87938a86fa28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
-               document.querySelector('#picSwap').src='../images/Game-Over.gif'
+               document.querySelector('#picSwap').src='./images/Game-Over.gif'
                document.querySelector('#start-button').remove()
                document.querySelector('#buttons').remove()
                alert("Oh my, the pokémon has fainted!")
