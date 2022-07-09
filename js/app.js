@@ -14,7 +14,7 @@ let sleepinessScore = document.querySelector('.sleepinessScore')
 let boredomScore = document.querySelector('.boredomScore')
 let ageTracking = document.querySelector('#Age')
 let grabButtons = document.querySelector('#buttons')
-let grabFoodImage = document.querySelector('#Food-Image')
+let grabFoodBallImage = document.querySelector('#Food-and-Ball-Image')
 let grabBackgroundImage = document.body.style.backgroundImage
 //CLASS STARTS
 class Pokemon {
@@ -65,7 +65,7 @@ class Pokemon {
             console.log("inside addFoodPic")
             let berryDiv = document.createElement('div')
             berryDiv.setAttribute('id', 'berryDiv')
-             grabFoodImage.appendChild(berryDiv)
+             grabFoodBallImage.appendChild(berryDiv)
             let berryImageTag =document.createElement('img')
             berryImageTag.setAttribute('id',"berryImage") 
             berryDiv.appendChild(berryImageTag)
@@ -92,7 +92,7 @@ class Pokemon {
             
             let ballDiv = document.createElement('div')
             ballDiv.setAttribute('id', 'ballDiv')
-             grabFoodImage.appendChild(ballDiv)
+             grabFoodBallImage.appendChild(ballDiv)
             let ballImageTag =document.createElement('img')
             ballImageTag.setAttribute('id',"ballImage") 
             ballDiv.appendChild(ballImageTag)
@@ -156,6 +156,6 @@ document.getElementById('play').addEventListener('click', (e)=>{selectedPokemon.
 document.getElementById('lights').addEventListener('click',(e)=>{ selectedPokemon.lightsOff()}) 
 
 
-//Rename 
+
 
 
