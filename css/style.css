@@ -38,6 +38,8 @@ width: 90px;
          height: 60px;
         
         }
+
+        
 #Stats{
     background-color: white;
     width: 270px;
@@ -76,14 +78,17 @@ width: 90px;
    position:absolute;
    bottom: 0%;
     left: 39%; 
-    width: 400px; 
+    width: 300px; 
+    
     
 }
 #picSwap{
     width: 200px;
     height: 200px;
     
+      
 }
+
 
 #Food-Image{
     height: 100px;
@@ -95,7 +100,7 @@ width: 90px;
     width: 75px;
     position:absolute;
     bottom:0%;
-    left: 30%;
+    left: 20%;   
 }
 
 #start{
@@ -103,4 +108,11 @@ width: 90px;
     height: 50px;
     width: 70px;
     border-radius: 10px;
+}
+#ballImage{
+    height: 75px;
+    width: 75px;
+    position:absolute;
+    bottom:0%;
+    left: 20%;   
 }
