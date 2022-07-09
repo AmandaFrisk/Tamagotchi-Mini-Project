@@ -1,13 +1,13 @@
 //INTRO
-alert("Welcome to Pokemon Daycare. We're so happy to have you volunteering with us today! Click OK to continue.")
+alert("Welcome to Pokémon Daycare. We're so happy to have you volunteering with us today! Click OK to continue.")
 const playerName = prompt("What's your name?"); 
 const Professor = "Professor Amanda"
 //console.log(playerName);
-alert(`It is great to meet you ${playerName}! I am ${Professor}. Before you're entrusted with a starter Pokemon of your own, you must show that you can care for someone else's. Perfect timing! Trainer Red just dropped off an egg that is about to hatch!  You will be assigned to care for the pokemon that hatches while he's away. Pokemon are playful and rambunctious. If they do not get enough attention they will FAINT from boredom. Remember that the Pokemon must eat and sleep as well or they will FAINT.`)
+alert(`It is great to meet you ${playerName}! I am ${Professor}. Before you're entrusted with a starter pokémon of your own, you must show that you can care for someone else's. Perfect timing! Trainer Red just dropped off an egg that is about to hatch!  You will be assigned to care for the pokémon that hatches while he's away. Pokémon are playful and rambunctious. If they do not get enough attention they will FAINT from boredom. Remember that the Pokémon must eat and sleep as well or they will FAINT.`)
 
-const pokemonName = prompt(" Oh dear, Red didn't leave a name for this Pokemon. What would you like to call it as a nick-name?")
+const pokemonName = prompt(" Oh dear, Red didn't leave a name for this pokémon. What would you like to call it as a nick-name?")
 
-alert(`Please take good care of ${pokemonName } , you might even get to witness their evolution! Press OK and then press the red START button to begin. `)
+alert(`Please take good care of ${pokemonName } , you might even get to witness their evolutions! Press OK and then press the red START button to begin. `)
 //DOM 
 let hungerScore= document.querySelector('.hungerScore')
 let sleepinessScore = document.querySelector('.sleepinessScore')
@@ -46,7 +46,7 @@ class Pokemon {
                document.querySelector('#picSwap').src='../images/Game-Over.gif'
                document.querySelector('#start-button').remove()
                document.querySelector('#buttons').remove()
-               alert("Oh my, the Pokemon has fainted!")
+               alert("Oh my, the pokémon has fainted!")
             } else {
                 console.log("conditionals not working")
             }
