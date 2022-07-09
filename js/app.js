@@ -105,10 +105,10 @@ class Pokemon {
         lightsOff(){
             console.log("lightsOff")
          
-        document.body.style.backgroundImage="url('../images/DarkForest.jpeg')"
+        document.body.style.backgroundImage="url('./images/DarkForest.jpeg')"
         // ZZZ image add?
         function lightsOn(){
-         document.body.style.backgroundImage="url('../images/LightForest.jpeg')" 
+         document.body.style.backgroundImage="url('./images/LightForest.jpeg')" 
       }
       setTimeout(lightsOn, 1000)
         
@@ -123,15 +123,15 @@ class Pokemon {
                 
                 if (this.age === 1){
                     console.log("Charmander")
-            document.querySelector('#picSwap').src="../images/Char1.png"
+            document.querySelector('#picSwap').src="./images/Char1.png"
                 }
                 if (this.age === 5){
                     console.log("Charmeleon")
-            document.querySelector('#picSwap').src='../images/Charmeleon1.png'
+            document.querySelector('#picSwap').src='./images/Charmeleon1.png'
                 }
                 if (this.age === 7){
                     console.log("Charzard")
-                   document.querySelector('#picSwap').src='../images/Charzard1.png'
+                   document.querySelector('#picSwap').src='./images/Charzard1.png'
              
              clearInterval(ageTimer) 
                 }
